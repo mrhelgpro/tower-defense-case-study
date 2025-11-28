@@ -4,7 +4,7 @@ namespace TowerDefence.Gameplay
 {
     public class HealthPointsRuntime
     {
-        public event Action<float> OnHealthPointsChanged;
+        public event Action OnHealthPointsChanged;
         
         public float MaxHealth { get; private set; }
         public float CurrentHealth { get; private set; }
@@ -13,13 +13,13 @@ namespace TowerDefence.Gameplay
         {
             MaxHealth = maxHealth;
             CurrentHealth = maxHealth;
-            OnHealthPointsChanged?.Invoke(MaxHealth);
+            OnHealthPointsChanged?.Invoke();
         }
 
         public void TakeDamage(float amount)
         {
             CurrentHealth -= amount;
-            OnHealthPointsChanged?.Invoke(MaxHealth);
+            OnHealthPointsChanged?.Invoke();
         }
     }
 }

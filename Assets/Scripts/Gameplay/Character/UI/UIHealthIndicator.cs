@@ -1,16 +1,40 @@
 using UnityEngine;
+using UnityEngine.UI;
 
-public class UIHealthIndicator : MonoBehaviour
+namespace TowerDefence.Gameplay
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class UIHealthIndicator : MonoBehaviour
     {
-        
-    }
+        [SerializeField] private Character _character;
+        [SerializeField] private Slider _slider;
+        [SerializeField] private Image _image;
 
-    // Update is called once per frame
-    void Update()
-    {
+        private void OnEnable()
+        {
+            _character.HealthPointsRuntime.OnHealthPointsChanged += OnHealthPointsChanged;
+            _character.OnTeamChanged += OnTeamChanged;
+        }
         
+        private void OnDisable()
+        {
+            _character.HealthPointsRuntime.OnHealthPointsChanged -= OnHealthPointsChanged;
+            _character.OnTeamChanged -= OnTeamChanged;
+        }
+
+        private void LateUpdate()
+        {
+            transform.rotation = Quaternion.identity;
+        }
+        
+        private void OnHealthPointsChanged()
+        {
+            _slider.value = _character.HealthPointsRuntime.CurrentHealth / _character.HealthPointsRuntime.MaxHealth;
+        }
+        
+        private void OnTeamChanged(TeamIdentifier previousTeamIdentifier, TeamIdentifier currentTeamIdentifier)
+        {
+            _image.color = _character.TeamIdentifier.Color;
+        }
     }
 }
+
