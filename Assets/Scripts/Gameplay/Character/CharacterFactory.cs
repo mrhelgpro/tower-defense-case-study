@@ -9,15 +9,18 @@ namespace TowerDefence.Gameplay
         private readonly TeamSpawnPointRepository _teamSpawnPointRepository;
         private readonly PatrolPointsHolder _patrolPointsHolder;
         private readonly CinemachineCamera _cinemachineCamera;
+        private readonly TeamCountTracker _teamCountTracker;
 
         public CharacterFactory(
             TeamSpawnPointRepository teamSpawnPointRepository,
-            PatrolPointsHolder patrolPointsHolder, 
-            CinemachineCamera cinemachineCamera)
+            PatrolPointsHolder patrolPointsHolder,
+            CinemachineCamera cinemachineCamera, 
+            TeamCountTracker teamCountTracker)
         {
             _teamSpawnPointRepository = teamSpawnPointRepository;
             _patrolPointsHolder = patrolPointsHolder;
             _cinemachineCamera = cinemachineCamera;
+            _teamCountTracker = teamCountTracker;
         }
 
         public void CreatePlayer(CharacterConfig characterConfig, TeamIdentifier teamIdentifier)
@@ -44,6 +47,8 @@ namespace TowerDefence.Gameplay
             
             character.transform.position = position;
             character.Construct(characterConfig, teamIdentifier);
+            
+            _teamCountTracker.AddCharacter(character);
             
             return character;
         }

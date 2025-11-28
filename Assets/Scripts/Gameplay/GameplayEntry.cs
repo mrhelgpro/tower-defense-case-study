@@ -14,11 +14,13 @@ namespace TowerDefence.Gameplay
         private PatrolPointsHolder  _patrolPointsHolder;
         private CharacterFactory  _characterFactory;
         private TeamSpawner _teamSpawner;
+        private TeamCountTracker _teamCountTracker;
 
         private void Awake()
         {
+            _teamCountTracker = new TeamCountTracker();
             _patrolPointsHolder = new PatrolPointsHolder(_patrolPoints, _gameplayConfig.TeamIdentifiers);
-            _characterFactory = new CharacterFactory(_teamSpawnPointRepository, _patrolPointsHolder, _cinemachineCamera);
+            _characterFactory = new CharacterFactory(_teamSpawnPointRepository, _patrolPointsHolder, _cinemachineCamera, _teamCountTracker);
             _teamSpawner = new TeamSpawner(_gameplayConfig, _characterFactory);
             
             _teamSpawnPointRepository.Initialize();

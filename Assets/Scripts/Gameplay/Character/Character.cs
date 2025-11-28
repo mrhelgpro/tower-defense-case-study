@@ -11,7 +11,7 @@ namespace TowerDefence.Gameplay
         [SerializeField] private CharacterSkin _characterSkin;
         [SerializeField] private CharacterAnimator _characterAnimator;
 
-        public event Action<Character> OnTeamChanged;
+        public event Action<TeamIdentifier,TeamIdentifier> OnTeamChanged;
         
         public HealthPointsRuntime HealthPointsRuntime { get; } = new();
         public CharacterConfig CharacterConfig { get; private set; }
@@ -71,6 +71,7 @@ namespace TowerDefence.Gameplay
 
         private void Configure(TeamIdentifier currentTeamIdentifier)
         {
+            var previousTeamIdentifier = TeamIdentifier;
             TeamIdentifier = currentTeamIdentifier;
             
             HealthPointsRuntime.Configure(CharacterConfig.HealthPoint);
@@ -78,7 +79,7 @@ namespace TowerDefence.Gameplay
             _characterAttack.Configure(TeamIdentifier, CharacterConfig.AttackDamage, CharacterConfig.AttackRadius);
             _characterSkin.ShowTeamColor(TeamIdentifier.Color);
             
-            OnTeamChanged?.Invoke(this);
+            OnTeamChanged?.Invoke(previousTeamIdentifier, currentTeamIdentifier);
         }
     }
 }
