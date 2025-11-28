@@ -6,9 +6,6 @@ namespace TowerDefence.Gameplay
 {
     public class Character : MonoBehaviour
     {
-        [SerializeField] private CharacterConfig _debugCharacterConfig;
-        [SerializeField] private TeamIdentifier _debugTeamIdentifier;
-        
         [SerializeField] private CharacterMovement _characterMovement;
         [SerializeField] private CharacterAttack _characterAttack;
         [SerializeField] private CharacterSkin _characterSkin;
@@ -20,11 +17,6 @@ namespace TowerDefence.Gameplay
         public CharacterConfig CharacterConfig { get; private set; }
         public TeamIdentifier TeamIdentifier { get; private set; }
         public float AttackCooldownTime { get; private set; }
-        
-        private void Awake()
-        {
-            Construct(_debugCharacterConfig, _debugTeamIdentifier);
-        }
 
         public void Construct(CharacterConfig characterConfig, TeamIdentifier teamIdentifier)
         {

@@ -5,27 +5,23 @@ using Random = UnityEngine.Random;
 
 namespace TowerDefence.Gameplay
 {
-    public class PatrolPointsHolder : MonoBehaviour
+    public class PatrolPointsHolder
     {
-        [SerializeField] private TeamConfig _teamConfig;
-        [SerializeField] private List<Transform> _patrolPoints = new();
-
         public event Action<TeamIdentifier> OnPatrolPointChanged;
         
+        private readonly List<Transform> _patrolPoints;
+        private readonly List<TeamIdentifier> _teamIdentifiers;
         private readonly Dictionary<TeamIdentifier, Vector3> _patrolPointDictionary = new();
 
-        public static PatrolPointsHolder INSTANCE;
-        
-        private void Awake()
+        public PatrolPointsHolder(List<Transform> patrolPoints, List<TeamIdentifier> teamIdentifiers)
         {
-            INSTANCE = this;
-
-            Initialize();
+            _patrolPoints = patrolPoints;
+            _teamIdentifiers = teamIdentifiers;
         }
 
         public void Initialize()
         {
-            foreach (var teamIdentifier in _teamConfig.TeamIdentifiers)
+            foreach (var teamIdentifier in _teamIdentifiers)
             {
                 RefreshPatrolPoint(teamIdentifier);
             }

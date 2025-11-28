@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 320e2607de7244f41b44bbccd213eff6, type: 3}
-  m_Name: Config_Character_Dwarf
+  m_Name: Config_Character_Elf
   m_EditorClassIdentifier: Assembly-CSharp::TowerDefence.Gameplay.CharacterConfig
-  _characterPrefab: {fileID: 0}
-  _raceType: 3
-  _healthPoint: 200
-  _moveSpeed: 4
-  _attackSpeed: 0.5
-  _attackDamage: 50
-  _attackRadius: 4
+  _characterPrefab: {fileID: 8810192020609824996, guid: fd7dcc49e49884c60b8a9b70c1ee5fe3, type: 3}
+  _raceType: 2
+  _healthPoint: 80
+  _moveSpeed: 5
+  _attackSpeed: 2
+  _attackDamage: 20
+  _attackRadius: 2

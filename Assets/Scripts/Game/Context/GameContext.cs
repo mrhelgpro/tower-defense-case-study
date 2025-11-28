@@ -5,8 +5,7 @@ namespace TowerDefence.Game
     public class GameContext : IGameContext
     {
         public int TestInt { get; set; }
-
-
+        
         public void Init()
         {
             Reset();

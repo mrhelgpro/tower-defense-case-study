@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace TowerDefence.Gameplay
 {
-    [CreateAssetMenu(fileName = "Config_Character", menuName = "TowerDefence/Gameplay/CharacterConfig")]
+    [CreateAssetMenu(fileName = "CharacterConfig", menuName = "TowerDefence/Gameplay/CharacterConfig")]
     public class CharacterConfig : ScriptableObject
     {
         [SerializeField] private Character _characterPrefab;

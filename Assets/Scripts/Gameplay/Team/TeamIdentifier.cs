@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace TowerDefence.Gameplay
 {
-    [CreateAssetMenu(fileName = "Identifier_Team", menuName = "TowerDefence/Gameplay/TeamIdentifier")]
+    [CreateAssetMenu(fileName = "TeamIdentifier", menuName = "TowerDefence/Gameplay/TeamIdentifier")]
     public class TeamIdentifier : ScriptableObject
     {
         [SerializeField] private string _title;

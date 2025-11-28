@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4764af40229141adab75fb2b6dc0f58, type: 3}
+  m_Name: GameplayConfig
+  m_EditorClassIdentifier: Assembly-CSharp::TowerDefence.Gameplay.GameplayConfig
+  _playerConfig: {fileID: 11400000, guid: e75e44483779b47918297a025d294f9e, type: 2}
+  _teamIdentifiers:
+  - {fileID: 11400000, guid: 1fc7c1adf447f4d67bd78b9ebe456231, type: 2}
+  - {fileID: 11400000, guid: 7d8553b6f7fe34d84ad4e6a8e244b211, type: 2}
+  - {fileID: 11400000, guid: 15823c72096e947cda7a4ba574d77981, type: 2}
+  - {fileID: 11400000, guid: 23fb32a743ede4a8289af9af62fc0543, type: 2}
+  _characterConfigs:
+  - {fileID: 11400000, guid: 5732f8b7966704625ac4148ac965639e, type: 2}
+  - {fileID: 11400000, guid: 8b8725ef02edb48359e7f9c946ff6c85, type: 2}
+  - {fileID: 11400000, guid: e75e44483779b47918297a025d294f9e, type: 2}
+  - {fileID: 11400000, guid: 82e25045946e3425386d8db400cbc474, type: 2}

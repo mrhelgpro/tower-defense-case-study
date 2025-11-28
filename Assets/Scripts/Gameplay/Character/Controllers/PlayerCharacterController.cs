@@ -5,15 +5,24 @@ namespace TowerDefence.Gameplay
 {
     public class PlayerCharacterController : MonoBehaviour
     {
-        [SerializeField] private Character _character;
-        
+        private Character _character;
         private Vector2 _moveInput;
         private bool _isMoving;
+        private bool _isConstructed;
+        
+        public void Construct(Character character)
+        {
+            _character = character;
+            _isConstructed = true;
+        }
 
         private void Update()
         {
-            HandleMovement();
-            HandleAttack();
+            if (_isConstructed)
+            {
+                HandleMovement();
+                HandleAttack();
+            }
         }
 
         private void HandleMovement()

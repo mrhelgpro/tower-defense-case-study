@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 320e2607de7244f41b44bbccd213eff6, type: 3}
   m_Name: Config_Character_Human
   m_EditorClassIdentifier: Assembly-CSharp::TowerDefence.Gameplay.CharacterConfig
-  _characterPrefab: {fileID: 0}
+  _characterPrefab: {fileID: 8810192020609824996, guid: fd7dcc49e49884c60b8a9b70c1ee5fe3, type: 3}
   _raceType: 0
   _healthPoint: 100
-  _moveSpeed: 5
+  _moveSpeed: 4
   _attackSpeed: 1
   _attackDamage: 25
   _attackRadius: 2
