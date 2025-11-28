@@ -15,7 +15,7 @@ MonoBehaviour:
   _characterPrefab: {fileID: 8810192020609824996, guid: fd7dcc49e49884c60b8a9b70c1ee5fe3, type: 3}
   _raceType: 1
   _healthPoint: 150
-  _moveSpeed: 4
+  _moveSpeed: 3
   _attackSpeed: 0.75
   _attackDamage: 35
   _attackRadius: 2

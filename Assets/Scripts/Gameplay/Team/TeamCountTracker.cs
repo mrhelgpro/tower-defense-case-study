@@ -20,6 +20,11 @@ namespace TowerDefence.Gameplay
             character.OnTeamChanged += OnCharacterTeamChanged;
         }
 
+        public int GetCount(TeamIdentifier teamIdentifier)
+        {
+            return _teamCounts.GetValueOrDefault(teamIdentifier);
+        }
+
         private void OnCharacterTeamChanged(TeamIdentifier previousTeamIdentifier, TeamIdentifier currentTeamIdentifier)
         {
             DecreaseTeam(previousTeamIdentifier);

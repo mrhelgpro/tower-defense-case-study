@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4764af40229141adab75fb2b6dc0f58, type: 3}
   m_Name: GameplayConfig
   m_EditorClassIdentifier: Assembly-CSharp::TowerDefence.Gameplay.GameplayConfig
-  _playerConfig: {fileID: 11400000, guid: e75e44483779b47918297a025d294f9e, type: 2}
+  _teamCharactersAmount: 3
   _teamIdentifiers:
   - {fileID: 11400000, guid: 1fc7c1adf447f4d67bd78b9ebe456231, type: 2}
   - {fileID: 11400000, guid: 7d8553b6f7fe34d84ad4e6a8e244b211, type: 2}

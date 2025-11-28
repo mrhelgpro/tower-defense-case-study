@@ -7,9 +7,11 @@ namespace TowerDefence.Game
 {
     public class GameplayState : IState
     {
+        private IStateMachine _stateMachine;
         private IScreenRouter _screenRouter;
         private IUIRegistry _uiRegistry;
         private IEventBus _eventBus;
+        
         private IEventToken _pauseToken;
         private IEventToken _resumeToken;
         private IEventToken _gameOverToken;
@@ -17,6 +19,7 @@ namespace TowerDefence.Game
 
         public async void OnEnter()
         {
+            _stateMachine = Services.Get<IStateMachine>();
             _screenRouter = Services.Get<IScreenRouter>();
             _uiRegistry= Services.Get<IUIRegistry>();
             _eventBus = Services.Get<IEventBus>();
@@ -71,9 +74,14 @@ namespace TowerDefence.Game
             
             await _screenRouter.HideModalAsync();
         }
-
-        private async void OnGameOver(GameOverEvent evt){}
-
+        
+        private async void OnGameOver(GameOverEvent evt)
+        {
+            Time.timeScale = 0f;
+            
+            _stateMachine.SetState(new GameOverState());
+        }
+        
         private async void OnReturnToMenu(ReturnToMenuRequestedEvent evt)
         {
             Time.timeScale = 1f;
@@ -83,9 +91,8 @@ namespace TowerDefence.Game
             var sceneLoader = Services.Get<ISceneLoader>();
             var config = Services.Get<GameConfig>();
             await sceneLoader.LoadSceneAsync(config.MenuSceneName, UnityEngine.SceneManagement.LoadSceneMode.Single);
-
-            var stateMachine = Services.Get<IStateMachine>();
-            stateMachine.SetState(new MenuState());
+            
+            _stateMachine.SetState(new MenuState());
         }
     }
 }
