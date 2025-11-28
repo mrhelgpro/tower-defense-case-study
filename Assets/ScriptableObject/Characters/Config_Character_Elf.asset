@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 320e2607de7244f41b44bbccd213eff6, type: 3}
   m_Name: Config_Character_Elf
   m_EditorClassIdentifier: Assembly-CSharp::TowerDefence.Gameplay.CharacterConfig
-  _characterPrefab: {fileID: 8810192020609824996, guid: fd7dcc49e49884c60b8a9b70c1ee5fe3, type: 3}
+  _characterPrefab: {fileID: 8810192020609824996, guid: 3beb99a46273b47629bfb754f8211042, type: 3}
   _raceType: 2
   _healthPoint: 80
   _moveSpeed: 4

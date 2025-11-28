@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 320e2607de7244f41b44bbccd213eff6, type: 3}
   m_Name: Config_Character_Dwarf
   m_EditorClassIdentifier: Assembly-CSharp::TowerDefence.Gameplay.CharacterConfig
-  _characterPrefab: {fileID: 8810192020609824996, guid: fd7dcc49e49884c60b8a9b70c1ee5fe3, type: 3}
+  _characterPrefab: {fileID: 8810192020609824996, guid: c7fae5f07a6b64a468cb9acb157a1836, type: 3}
   _raceType: 3
   _healthPoint: 200
   _moveSpeed: 2
