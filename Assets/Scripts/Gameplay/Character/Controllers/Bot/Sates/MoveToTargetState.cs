@@ -5,7 +5,7 @@ namespace TowerDefence.Gameplay
 {
     public class MoveToTargetState : IState
     {
-        private const float ATTACK_DISTANCE = 1f;
+        private const float ATTACK_DISTANCE = 1.5f;
         
         private readonly IStateMachine _stateMachine;
         private readonly Character _character;
